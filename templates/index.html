@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CSV Viewer | Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <main class="dashboard">
+
+        <div class="container">
+
+
+            <!-- ==============================
+                 HEADER
+            =============================== -->
+
+            <header class="dashboard-header">
+
+                <div class="brand">
+
+                    <div class="brand-icon">
+                        C
+                    </div>
+
+
+                    <div>
+
+                        <h1>
+                            CSV Viewer
+                        </h1>
+
+                        <span>
+                            Your personal data workspace
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="/logout"
+                    class="logout-btn"
+                >
+                    Logout
+                </a>
+
+            </header>
+
+
+
+            <!-- ==============================
+                 UPLOAD
+            =============================== -->
+
+            <section class="upload-box">
+
+                <h2>
+                    Explore your data
+                </h2>
+
+
+                <p class="upload-description">
+                    Upload a CSV file to view and explore
+                    its contents in a clean, organized table.
+                </p>
+
+
+                <form
+                    action="/upload"
+                    method="POST"
+                    enctype="multipart/form-data"
+                    class="upload-form"
+                >
+
+                    <input
+                        type="file"
+                        name="csv_file"
+                        accept=".csv"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="upload-btn"
+                    >
+                        Upload CSV
+                    </button>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- ==============================
+                 CSV DATA
+            =============================== -->
+
+            {% if data %}
+
+            <section class="table-container">
+
+                {{ data | safe }}
+
+            </section>
+
+            {% endif %}
+
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
