@@ -98,6 +98,17 @@ DataFrame converted to HTML
     ↓
 Data displayed in the dashboard
 
+## Running with Docker
+
+### Prerequisites
+- Docker Desktop installed
+- PostgreSQL running
+- Existing `csv_viewer` database configured
+
+### Run the application
+
+```bash
+docker compose up --build
 ## Local Setup
 
 ### 1. Clone the Repository
