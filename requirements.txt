@@ -1,0 +1,6 @@
+flask
+pandas
+python-dotenv
+psycopg[binary]
+Authlib
+requests
